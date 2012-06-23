@@ -12,6 +12,10 @@ class PlayHead < Formula
       s.gsub! "dir=`dirname $PRG`", "dir=`dirname $0` && dir=$dir/`dirname $PRG`"
     end
     bin.install_symlink libexec+'play'
+    
+    cd libexec/"framework" do
+      system "./build", "build-repository"
+    end
   end
 
   def caveats
