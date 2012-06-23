@@ -17,17 +17,4 @@ class PlayHead < Formula
       system "./build", "build-repository"
     end
   end
-
-  def caveats
-    <<-EOS.undent
-      Play needs to be build as described in https://github.com/playframework/Play20/wiki/BuildingFromSource
-      Do so by executing build script in #{libexec}/framework and then executing command build-repository
-
-            cd #{libexec}/framework
-            ./build
-            > build-repository
-            > exit
-
-    EOS
-  end
 end
