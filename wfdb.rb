@@ -5,8 +5,8 @@ class Wfdb < Formula
   md5 'e08da98ae61400efced69f01529b8c0a'
 
   def install
-    inreplace "conf/darwin.def", /-arch ppc/, ""
-    inreplace "conf/darwin-slib.def", /-arch ppc/, ""
+    inreplace "conf/darwin.def", "-arch ppc", ""
+    inreplace "conf/darwin-slib.def", "-arch ppc", ""
 
     system "./configure", "", "--prefix=#{prefix}", "-m32", "--mandir=#{man}"
     system "make install"
